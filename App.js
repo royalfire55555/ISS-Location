@@ -14,14 +14,14 @@ function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                intialRouteName="home"
+                intialRouteName="Home"
                 screenOptions={{
                     headerShown: false,
                 }}
             >
-                <Stack.Screen name="home" component={HomeScreen}></Stack.Screen>
-                <Stack.Screen name="iss" component={IssLocation}></Stack.Screen>
-                <Stack.Screen name="meteor" component={Meteor}></Stack.Screen>
+                <Stack.Screen name="Home" component={HomeScreen}></Stack.Screen>
+                <Stack.Screen name="ISS" component={IssLocation}></Stack.Screen>
+                <Stack.Screen name="Meteor" component={Meteor}></Stack.Screen>
             </Stack.Navigator>
         </NavigationContainer>
     );

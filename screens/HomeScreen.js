@@ -1,13 +1,21 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {
+    StyleSheet,
+    Text,
+    View,
+    SafeAreaView,
+    Platform,
+    StatusBar,
+} from "react-native";
 
 export default class HomeScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Home Screen</Text>
-                <StatusBar style="auto" />
+                <SafeAreaView style={styles.droidSafeArea} />
+                <View style={styles.titleBar}>
+                    <Text style={styles.titleText}>ISS Tracker App</Text>
+                </View>
             </View>
         );
     }
@@ -16,8 +24,14 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
+    },
+    droidSafeArea: {
+        marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    },
+    titleText: {},
+    titleBar: {
+        flex: 0.15,
         justifyContent: "center",
+        alignItems: "center",
     },
 });
