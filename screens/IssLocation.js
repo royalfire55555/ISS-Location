@@ -30,7 +30,7 @@ export default class IssLocation extends React.Component {
         axios
             .get("https://api.wheretheiss.at/v1/satellites/25544")
             .then((response) => {
-                this.setState({ location: response.data() });
+                this.setState({ location: response.data });
             })
             .catch((error) => {
                 Alert.alert(error.message);
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     mapContainer: {
-        flx: 0.6,
+        flex: 1,
     },
     map: {
         width: "100%",
